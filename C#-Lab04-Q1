@@ -1,5 +1,5 @@
+Part 01: No return type, no parameter
 Class - ConvertValues
-
 namespace Lab04
 {
     internal class ConvertValues
@@ -9,17 +9,14 @@ namespace Lab04
             Console.WriteLine("Enter value in Km: ");
             double km = double.Parse(Console.ReadLine());
 
-            double cm = km * 1000 * 100;
+            double meter = km * 1000;
 
-            Console.WriteLine("Value in Cm: " + cm);
+            Console.WriteLine("Value in Meters: " + meter);
         }
     }
 }
 
-
-
 Main - Program.cs
-
 namespace Lab04
 {
     internal class Program
@@ -33,3 +30,73 @@ namespace Lab04
         }
     }
 }
+
+
+Part 02: No return type, with parameter 
+Class - ConvertValues
+namespace Lab04
+{
+    internal class ConvertValues
+    {
+        public void kilometerTOmeter(double km)
+        {
+            double meter = km * 1000;
+            Console.WriteLine("Value in Meters: " + meter);
+        }
+    }
+}
+
+Main - Program.cs
+namespace Lab04
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter value in Km: ");
+            double km = double.Parse(Console.ReadLine());
+            
+            ConvertValues objvalue = new ConvertValues();
+            objvalue.kilometerTOmeter(km);
+                
+            Console.ReadLine();
+        }
+    }
+}
+
+
+Part 03: With return type, with parameter
+Class - ConvertValues
+namespace Lab04
+{
+    internal class ConvertValues
+    {
+        public double kilometerTOmeter(double km)
+        {
+            double meter = km * 1000;
+            return meter;
+        }
+    }
+}
+
+
+Main - Program.cs
+namespace Lab04
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ConvertValues objvalue = new ConvertValues();
+            Console.WriteLine("Enter value in Km: ");
+
+            double km = double.Parse(Console.ReadLine());
+            double meter = objvalue.kilometerTOmeter(km);
+            
+            Console.WriteLine("Value in meters: " + meter);
+                
+            Console.ReadLine();
+        }
+    }
+}
+
