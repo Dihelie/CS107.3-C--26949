@@ -1,0 +1,35 @@
+Class - ConvertValues
+
+namespace Lab04
+{
+    internal class ConvertValues
+    {
+        public void kilometerTOmeter()
+        {
+            Console.WriteLine("Enter value in Km: ");
+            double km = double.Parse(Console.ReadLine());
+
+            double cm = km * 1000 * 100;
+
+            Console.WriteLine("Value in Cm: " + cm);
+        }
+    }
+}
+
+
+
+Main - Program.cs
+
+namespace Lab04
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ConvertValues objvalue = new ConvertValues();
+            objvalue.kilometerTOmeter();
+                
+            Console.ReadLine();
+        }
+    }
+}
