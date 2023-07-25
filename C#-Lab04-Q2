@@ -1,0 +1,43 @@
+Class - 
+namespace Lab04
+{
+    internal class FindValues
+    {
+        public double FindArea(double radius)
+        {
+            double area = (3.142 * radius * radius);
+            return area;
+        }
+
+        public double FindCircumference(double radius)
+        {
+            double circumference = (2 * 3.142 * radius);
+            return circumference;
+        }
+    }
+}
+
+
+Main - Program.cs
+namespace Lab04
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            FindValues objfind = new FindValues();
+
+            Console.WriteLine("Enter radius of the circle: ");
+
+            double radius = double.Parse(Console.ReadLine());
+                      
+            double area = objfind.FindArea(radius);
+            double circumference = objfind.FindCircumference(radius);
+
+            Console.WriteLine("Area of the circle: ");
+            Console.WriteLine("Circumference of the circle: ");
+
+            Console.ReadLine();
+        }
+    }
+}
