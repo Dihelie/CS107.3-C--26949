@@ -1,0 +1,30 @@
+Class - Hello
+namespace Lab04
+{
+    internal class Hello
+    {
+        private void sayHello()
+        {
+            Console.WriteLine("Hello World");
+        }
+    }
+}
+
+
+Main - Program.cs
+namespace Lab04
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Hello obj = new Hello();
+            obj.sayHello();
+
+            Console.ReadLine();
+        }
+    }
+}
+
+-- We can not access sayHello() method because it is a private method. Private methods can only be accessed within the class. 
+To access sayHello() from outside the class it should be made public. public void sayHello().
