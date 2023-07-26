@@ -1,0 +1,75 @@
+Class - Array
+namespace Lab04
+{
+    internal class Array
+    {
+        public int arrayMin(int[] array)
+        {
+            int min = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                }
+            }
+            return min;
+        }
+        public int arrayMax(int[] array)
+        {
+            int max = array[0];
+            for (int i = 1; i < array.Length;i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+            }
+            return max;
+        }
+        public double arrayAvg(int[] array)
+        {
+            double sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            double avg = sum/array.Length;
+            return avg;
+        }
+        public void arrayorder(int[] array)
+        {
+            for (int i = array.Length - 1;i >= 0; i--)
+            {
+                Console.WriteLine("Reverse Order of array: "+ array[i]);
+            }
+        }
+    }
+}
+
+
+Main - Program.cs
+namespace Lab04
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[10];
+            Console.WriteLine("Enter 10 numbers: ");
+            for (int i = 0; i < 10;  i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());   
+            }
+            Array obj = new Array();
+
+            Console.WriteLine("Minimum Value: " + obj.arrayMin(array));
+            Console.WriteLine("Maximum Value: " +obj.arrayMax(array));
+            Console.WriteLine("Average: " +obj.arrayAvg(array));
+            Console.WriteLine("Reverse Order of Array: ");
+            obj.arrayorder(array);
+
+            Console.ReadLine();
+        }
+    }
+}
