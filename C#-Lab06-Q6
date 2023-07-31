@@ -1,8 +1,6 @@
 Class - ArrayOperations
 namespace Lab06
 {
-    internal class Array
-    {
         public class ArrayOperations
         {
             public int[] CreateUserArray(int size)
@@ -22,8 +20,6 @@ namespace Lab06
                 return array;
             }
         }
-
-    }
 }
 
 
