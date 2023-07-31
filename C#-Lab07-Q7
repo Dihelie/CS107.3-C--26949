@@ -1,8 +1,6 @@
 Class - ArrayOperations
 namespace Lab07
 {
-    internal class Array
-    {
         public class ArrayOperations
         {
 
@@ -42,7 +40,6 @@ namespace Lab07
                 return ScalarSum(productArray);
             }
         }
-    }
 }
 
 
