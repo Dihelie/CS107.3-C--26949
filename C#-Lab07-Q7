@@ -1,0 +1,90 @@
+Class - ArrayOperations
+namespace Lab07
+{
+    internal class Array
+    {
+        public class ArrayOperations
+        {
+
+            public static int ScalarSum(int[] array)
+            {
+                int sum = 0;
+                foreach (int i in array)
+                {
+                    sum += i;
+                }
+                return sum;
+            }
+
+            public static int[] VectorSum(int[] array1, int[] array2)
+            {
+                int[] sumArray = new int[array1.Length];
+                for (int i = 0; i < array1.Length; i++)
+                {
+                    sumArray[i] = array1[i] + array2[i];
+                }
+                return sumArray;
+            }
+
+            public static int[] VectorProduct(int[] array1, int[] array2)
+            {
+                int[] productArray = new int[array1.Length];
+                for (int i = 0; i < array1.Length; i++)
+                {
+                    productArray[i] = array1[i] * array2[i];
+                }
+                return productArray;
+            }
+
+            public static int ScalarProduct(int[] array1, int[] array2)
+            {
+                int[] productArray = VectorProduct(array1, array2);
+                return ScalarSum(productArray);
+            }
+        }
+    }
+}
+
+
+Main - Program.cs
+namespace Lab07
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the size of the arrays:");
+            int size = Convert.ToInt32(Console.ReadLine());
+
+            int[] array1 = new int[size];
+            int[] array2 = new int[size];
+
+            Console.WriteLine("Enter the values for the first array:");
+            for (int i = 0; i < size; i++)
+            {
+                array1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Enter the values for the second array:");
+            for (int i = 0; i < size; i++)
+            {
+                array2[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Scalar sum of first array: " + ArrayOperations.ScalarSum(array1));
+            Console.WriteLine("Scalar sum of second array: " + ArrayOperations.ScalarSum(array2));
+
+            int[] vectorSum = ArrayOperations.VectorSum(array1, array2);
+            Console.WriteLine("Vector sum of arrays: [" + string.Join(", ", vectorSum) + "]");
+
+            int[] vectorProduct = ArrayOperations.VectorProduct(array1, array2);
+            Console.WriteLine("Vector product of arrays: [" + string.Join(", ", vectorProduct) + "]");
+
+            Console.WriteLine("Scalar product of arrays: " + ArrayOperations.ScalarProduct(array1, array2));
+
+
+
+            Console.ReadLine();
+            }
+        }
+    }
