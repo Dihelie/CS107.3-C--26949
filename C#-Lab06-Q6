@@ -1,0 +1,52 @@
+Class - ArrayOperations
+namespace Lab06
+{
+    internal class Array
+    {
+        public class ArrayOperations
+        {
+            public int[] CreateUserArray(int size)
+            {
+                int[] array = new int[size];
+                for (int i = 0; i < size; i += 2)
+                {
+                    Console.WriteLine("Enter a value:");
+                    array[i] = Convert.ToInt32(Console.ReadLine());
+
+                    // As long as there is room for a zero, insert it
+                    if (i + 1 < size)
+                    {
+                        array[i + 1] = 0;
+                    }
+                }
+                return array;
+            }
+        }
+
+    }
+}
+
+
+Main - Program.cs
+namespace Lab06
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the size of the array:");
+            int size = Convert.ToInt32(Console.ReadLine());
+            ArrayOperations arrayOps = new ArrayOperations();
+            int[] array = arrayOps.CreateUserArray(size);
+
+            Console.WriteLine("The array values are:");
+            foreach (int val in array)
+            {
+                Console.Write(val + " ");
+
+
+                Console.ReadLine();
+            }
+        }
+    }
+}
